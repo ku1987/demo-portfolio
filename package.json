@@ -12,7 +12,9 @@
   "dependencies": {
     "koa": "^2.11.0",
     "koa-router": "^8.0.7",
-    "koa-static": "^5.0.0"
+    "koa-static": "^5.0.0",
+    "redis": "^3.0.2",
+    "redis-cli": "^1.4.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"

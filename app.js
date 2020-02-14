@@ -7,7 +7,6 @@ const router = new Router();
 router.get('/', async (ctx, next) => {
   ctx.body = 'accessed to Home';
   console.log(ctx.response.type);
-  
 });
 router.get('/a', async (ctx, next) => {
   ctx.body = 'accessed to /a ';
