@@ -5,24 +5,41 @@ import Link from 'next/link';
 const Navbar = () => (
   <div className="navbar">
     <ul className="navbar-nav">
-      <li>
+      <li className="navbar-item">
+        <a>
+          <i className="fa fa-angle-double-right" />
+        </a>
+      </li>
+      <li className="navbar-item">
         <Link href="/">
-          <a><i className="fa fa-home" /></a>
+          <a>
+            <i className="fa fa-home" />
+            <span className="link-text">Home</span>
+          </a>
         </Link>
       </li>
-      <li>
+      <li className="navbar-item">
         <Link href="/about">
-          <a><i className="fa fa-address-card" /></a>
+          <a>
+            <i className="fa fa-address-card" />
+            <span className="link-text">About</span>
+          </a>
         </Link>
       </li>
-      <li>
+      <li className="navbar-item">
         <Link href="/works">
-          <a><i className="fa fa-desktop" /></a>
+          <a>
+            <i className="fa fa-desktop" />
+            <span className="link-text">Works</span>
+          </a>
         </Link>
       </li>
-      <li>
-        <Link href="/works">
-          <a><i className="fa fa-at" /></a>
+      <li className="navbar-item">
+        <Link href="/contact">
+          <a>
+            <i className="fa fa-at" />
+            <span className="link-text">Contact</span>
+          </a>
         </Link>
       </li>
     </ul>
