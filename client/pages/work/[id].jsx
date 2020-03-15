@@ -16,8 +16,9 @@ const Page = ({ work }) => (
         <div className="header-img">
           <img src={`/img/${work.img}`} alt={work.title} />
         </div>
-        <div>{work.title}</div>
-        <div>{work.desc}</div>
+        <h1>{work.title}</h1>
+        <h2>{work.desc}</h2>
+        <p>{work.body}</p>
       </div>
     </main>
   </div>
@@ -38,5 +39,6 @@ Page.propTypes = {
     title: PropTypes.string,
     desc: PropTypes.string,
     img: PropTypes.string,
+    body: PropTypes.string,
   }).isRequired,
 };

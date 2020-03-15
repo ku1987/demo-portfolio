@@ -35,7 +35,7 @@ const Works = () => {
       <div>
         <Navbar />
         <main>
-          <div>
+          <div className="container">
             <h1>Works</h1>
             <ul className="works-grid">
               {mapWorks(works)}
