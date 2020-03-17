@@ -6,9 +6,7 @@ const Navbar = () => (
   <div className="navbar">
     <ul className="navbar-nav">
       <li className="navbar-item">
-        <a>
-          <i className="fa fa-angle-double-right" />
-        </a>
+        <i className="fa fa-angle-double-right" />
       </li>
       <li className="navbar-item">
         <Link href="/">
