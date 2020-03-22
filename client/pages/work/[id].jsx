@@ -19,6 +19,9 @@ const Page = ({ work }) => (
         <h1>{work.title}</h1>
         <h2>{work.desc}</h2>
         <p>{work.body}</p>
+        <p className="textLink">
+          <a href="/">{work.url}</a>
+        </p>
       </div>
     </main>
   </div>

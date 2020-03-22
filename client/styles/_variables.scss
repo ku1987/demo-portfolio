@@ -1,0 +1,35 @@
+:root {
+  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  font-size: 10px;
+  --color-primary: #f7f7f7;
+  --color-secondary: #cccccc;
+  --bg-primary: #23232e;
+  --bg-secondary: #141418;
+  --fa-primary: #68b0fc;
+  --transition-speed: 300ms;
+  --transition-speed-slow: 700ms;
+}
+
+@keyframes opac {
+  from {
+    opacity: 0;
+    filter: hue-rotate(90deg);
+  }
+  to {
+    opacity: 1;
+    filter: hue-rotate(0deg);
+  }
+}
+
+@keyframes opacScale {
+  from {
+    opacity: 0;
+    transform: scale(.95);
+    filter: hue-rotate(90deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: hue-rotate(0deg);
+  }
+}

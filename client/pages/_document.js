@@ -18,8 +18,9 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <script src="/js/common.js" />
         </body>
       </html>
     );
-  }
-}
+  };
+};
