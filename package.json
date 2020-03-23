@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "server": "npm run dev --prefix server",
+    "deploy": "npm run deploy --prefix client"
   },
   "author": "",
   "license": "ISC",
