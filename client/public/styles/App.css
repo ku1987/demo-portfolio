@@ -212,6 +212,7 @@ h4 {
 a {
   -webkit-transition: var(--transition-speed);
   transition: var(--transition-speed);
+  color: currentColor;
 }
 
 a:hover {

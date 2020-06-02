@@ -3,49 +3,50 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import axios from 'axios';
 import { uuid } from 'uuidv4';
-import BASE_URL from '../components/config';
 import Navbar from '../components/navbar';
+import BASE_URL from '../components/config';
 
 const PATH = 'works';
-const homeUrl = `${BASE_URL}/${PATH}`;
+const serverUrl = `${BASE_URL}/${PATH}`;
 
-const mapWorks = (works) => works.map((work) => (
+const mapWorks = (contents) => contents.map((content) => (
   <li key={uuid()} className="works-item">
-    <Link href={`/work/${work.id}`}>
+    <Link href={`/work/${content.id}`}>
       <a>
-        <img src={`/img/${work.img}`} alt={work.desc} />
         <div className="works-text">
-          <h3>{work.title}</h3>
-          <p>{work.desc}</p>
+          <h3>{content.areaName}</h3>
+          <p dangerouslySetInnerHTML={{__html: content.contents}}></p>
         </div>
       </a>
     </Link>
   </li>
 ));
 
-const Works = () => {
-  const [works, setWorks] = useState(null);
+const Contents = () => {
+  const [contents, setContents] = useState(null);
   useEffect(() => {
-    axios.get(homeUrl)
-      .then((resData) => setWorks(resData.data.works))
-      .catch((err) => console.error(err));
+    const fetchData = async () => {
+      const res = await axios(serverUrl);
+      setContents(res.data.works);      
+    };
+    fetchData();
   }, []);
-  if (works) {
+  if (contents) {
     return (
       <div>
         <Navbar />
         <main>
           <div className="container">
-            <h1>Works</h1>
+            <h1>Contents</h1>
             <ul className="works-grid">
-              {mapWorks(works)}
+              {mapWorks(contents)}
             </ul>
           </div>
         </main>
       </div>
     );
   }
-  return null;
+  return 1;
 };
 
-export default Works;
+export default Contents;

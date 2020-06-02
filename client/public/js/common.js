@@ -9,6 +9,8 @@ const lazyLoad = target => {
         observer.disconnect();
       }
     });
+    console.log(entries);
+    
   });
   io.observe(target);
 };
