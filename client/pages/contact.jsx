@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable max-len */
 import React from 'react';
-import Navbar from '../components/Navbar';
+import Navbar from '../components/navbar';
 
 const Contact = () => (
   <div>

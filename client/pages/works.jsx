@@ -4,7 +4,7 @@ import Link from 'next/link';
 import axios from 'axios';
 import { uuid } from 'uuidv4';
 import BASE_URL from '../components/config';
-import Navbar from '../components/Navbar';
+import Navbar from '../components/navbar';
 
 const PATH = 'works';
 const SERVER_URL = `${BASE_URL}/${PATH}`;

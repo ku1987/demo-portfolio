@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import BASE_URL from '../../components/config';
-import Navbar from '../../components/Navbar';
+import Navbar from '../../components/navbar';
 
 const PATH = 'work';
 const SERVER_URL = `${BASE_URL}/${PATH}`;
