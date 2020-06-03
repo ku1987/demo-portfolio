@@ -7,7 +7,7 @@ import BASE_URL from '../components/config';
 import Navbar from '../components/navbar';
 
 const PATH = 'works';
-const homeUrl = `${BASE_URL}/${PATH}`;
+const SERVER_URL = `${BASE_URL}/${PATH}`;
 
 const mapWorks = (works) => works.map((work) => (
   <li key={uuid()} className="works-item">
@@ -26,9 +26,14 @@ const mapWorks = (works) => works.map((work) => (
 const Works = () => {
   const [works, setWorks] = useState(null);
   useEffect(() => {
-    axios.get(homeUrl)
-      .then((resData) => setWorks(resData.data.works))
-      .catch((err) => console.error(err));
+    (async () => {
+      try {
+        const res = await axios.get(SERVER_URL);
+        setWorks(res.data.works);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
   }, []);
   if (works) {
     return (

@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import server from '../../components/config';
+import BASE_URL from '../../components/config';
 import Navbar from '../../components/navbar';
 
-const { port } = server;
 const PATH = 'work';
-const homeUrl = `http://localhost:${port}/${PATH}`;
+const SERVER_URL = `${BASE_URL}/${PATH}`;
 
 const Page = ({ work }) => (
   <div>
@@ -29,7 +28,7 @@ const Page = ({ work }) => (
 
 Page.getInitialProps = async ({ query }) => {
   const { id } = query;
-  const res = await axios.get(`${homeUrl}/${id}`);
+  const res = await axios.get(`${SERVER_URL}/${id}`);
   const { work } = res.data;
   return { work };
 };
@@ -43,5 +42,6 @@ Page.propTypes = {
     desc: PropTypes.string,
     img: PropTypes.string,
     body: PropTypes.string,
+    url: PropTypes.string,
   }).isRequired,
 };

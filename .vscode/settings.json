@@ -1,0 +1,8 @@
+{
+  "deno.enable": false,
+  "cSpell.enableFiletypes": [
+    "!jsonc",
+    "!typescript",
+    "!typescriptreact"
+  ]
+}
