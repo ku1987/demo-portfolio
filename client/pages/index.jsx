@@ -7,7 +7,7 @@ const Index = () => (
   <div id="top">
     <Navbar />
     <div className="App-header">
-    <img src="/img/header_img.jpg" alt=""/>
+      <img src="/img/header_img.jpg" alt="" />
       <div className="header-title">
         <h1>Demo Portfolio</h1>
       </div>

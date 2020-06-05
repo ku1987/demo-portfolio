@@ -148,11 +148,6 @@ img {
   height: 100%;
 }
 
-label {
-  display: inline-block;
-  margin: 10px 0;
-}
-
 input[type='text'],
 input[type='number'] {
   border: 1px solid #dedede;
@@ -236,5 +231,41 @@ input[type='number'] {
 
   img {
     border-radius: 5px;
+  }
+}
+
+.formElm {
+  display: grid;
+  gap: 15px;
+  text-align: center;
+  width: 500px;
+  margin: 20px auto 30px;
+  input {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--color-secondary);
+    &:focus {
+      border: .5px solid rgba(25, 164, 224, .3);
+    }
+  }
+  label {
+    display: inline-block;
+    text-align: left;
+  }
+}
+input[type='submit'] {
+  border: none;
+  display: block;
+  padding: 15px;
+  width: 400px;
+  border-radius: 5px;
+  margin: auto;
+  background-color: rgba(25, 164, 224, .3);
+  transition: .3s;
+  font-size: 1.8rem;
+  &:hover {
+    background-color: rgba(25, 164, 224, .6);
+    color: white;
   }
 }

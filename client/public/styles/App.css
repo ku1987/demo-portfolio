@@ -265,11 +265,6 @@ img {
   height: 100%;
 }
 
-label {
-  display: inline-block;
-  margin: 10px 0;
-}
-
 input[type='text'],
 input[type='number'] {
   border: 1px solid #dedede;
@@ -362,6 +357,49 @@ input[type='number'] {
 
 .img-container img {
   border-radius: 5px;
+}
+
+.formElm {
+  display: -ms-grid;
+  display: grid;
+  gap: 15px;
+  text-align: center;
+  width: 500px;
+  margin: 20px auto 30px;
+}
+
+.formElm input {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--color-secondary);
+}
+
+.formElm input:focus {
+  border: 0.5px solid rgba(25, 164, 224, 0.3);
+}
+
+.formElm label {
+  display: inline-block;
+  text-align: left;
+}
+
+input[type='submit'] {
+  border: none;
+  display: block;
+  padding: 15px;
+  width: 400px;
+  border-radius: 5px;
+  margin: auto;
+  background-color: rgba(25, 164, 224, 0.3);
+  -webkit-transition: .3s;
+  transition: .3s;
+  font-size: 1.8rem;
+}
+
+input[type='submit']:hover {
+  background-color: rgba(25, 164, 224, 0.6);
+  color: white;
 }
 
 @media screen and (min-width: 800px) {
@@ -516,10 +554,6 @@ input[type='number'] {
   img {
     width: 100%;
     height: 100%;
-  }
-  label {
-    display: inline-block;
-    margin: 10px 0;
   }
   input[type='text'],
   input[type='number'] {
