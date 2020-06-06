@@ -414,7 +414,7 @@ input[type='submit'] {
   padding: 15px;
   border-radius: 5px;
   margin: 20px auto;
-  background-color: rgba(25, 164, 224, 0.3);
+  background-color: rgba(25, 164, 224, 0.4);
   -webkit-transition: .3s;
   transition: .3s;
   font-size: 1.8rem;
