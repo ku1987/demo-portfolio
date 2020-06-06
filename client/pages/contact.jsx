@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-fragments */
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable max-len */
 import React from 'react';
@@ -9,6 +10,7 @@ const Contact = () => {
     register, handleSubmit, errors,
   } = useForm();
   const onSubmit = (data) => console.log(data);
+
   return (
     <div>
       <Navbar />
@@ -18,11 +20,30 @@ const Contact = () => {
           <p>Please contact me here.</p>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="formElm">
-              <label htmlFor="Name">Name</label>
-              <input name="Name" placeholder="Your name..." ref={register} />
-              <label htmlFor="Mail">Mail</label>
-              <input name="Mail" placeholder="Your mail..." ref={register({ required: true })} />
-              {errors.exampleRequired && <span>This field is required</span>}
+              <label htmlFor="Name">Name
+                {errors.name && <span className="error">This field is required</span>}
+                <input
+                  name="name"
+                  placeholder="Your name..."
+                  ref={register({ required: true })}
+                />
+              </label>
+              <label htmlFor="Mail">Mail
+                {errors.mail && <span className="error">This field is required</span>}
+                <input
+                  name="mail"
+                  placeholder="Your mail..."
+                  ref={register({ required: true })}
+                />
+              </label>
+              <label htmlFor="text">Mail
+                {errors.text && <span className="error">This field is required</span>}
+                <textarea
+                  name="text"
+                  placeholder="Leave message here..."
+                  ref={register({ required: true })}
+                />
+              </label>
             </div>
             <input type="submit" />
           </form>
