@@ -270,7 +270,6 @@ img {
 
 .prof-img {
   margin: 20px auto;
-  width: 500px;
 }
 
 .prof-img img {
@@ -664,6 +663,9 @@ span.error {
     -ms-grid-columns: (minmax(700px, 1fr))[auto-fit];
         grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
     grid-auto-rows: minmax(600px, 100%);
+  }
+  .prof-img {
+    width: 500px;
   }
 }
 /*# sourceMappingURL=App.css.map */
