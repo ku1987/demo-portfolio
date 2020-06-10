@@ -368,6 +368,9 @@ input[type='number'] {
 
 .img-container img {
   border-radius: 5px;
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
 }
 
 .formElm {
