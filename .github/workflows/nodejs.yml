@@ -33,8 +33,8 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         port: ${{ secrets.PORT }}
+        key: ${{ secrets.SSH_DEPLOYMENT_KEY }}
         script: whoami
-        KEY: ${{ secrets.SSH_DEPLOYMENT_KEY }}
 
     # - run: npm test
       env:
