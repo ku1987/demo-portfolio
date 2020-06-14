@@ -34,8 +34,9 @@ jobs:
         username: ${{ secrets.USERNAME }}
         port: ${{ secrets.PORT }}
         key: ${{ secrets.SSH_DEPLOYMENT_KEY }}
-        script: whoami
-
+        script: |
+              whoami
+              ls -al
     # - run: npm test
       env:
         CI: true
