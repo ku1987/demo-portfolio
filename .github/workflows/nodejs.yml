@@ -36,9 +36,11 @@ jobs:
         port: ${{ secrets.PORT }}
         key: ${{ secrets.SSH_DEPLOYMENT_KEY }}
         script: |
-            sudo su - root
             pwd
-            cd demo-portfolio/
+            sudo su - root
+            cd /
+            pwd
+            cd /root/demo-portfolio/
             pwd
             bash deploy.sh
       env:
