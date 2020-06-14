@@ -27,6 +27,16 @@ jobs:
       working-directory: ./client
     - run: npm run build
       working-directory: ./client
+    - name: SSH Remote Commands
+      uses: appleboy/ssh-action@v0.1.1
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
+        script: whoami
+        KEY: ${{ secrets.SSH_DEPLOYMENT_KEY }}
+
     # - run: npm test
       env:
         CI: true
