@@ -36,11 +36,10 @@ jobs:
         port: ${{ secrets.PORT }}
         key: ${{ secrets.SSH_DEPLOYMENT_KEY }}
         script: |
-            whoami
             sudo su - root
-            whoami
+            pwd
             cd demo-portfolio/
-            ls -la
+            pwd
             bash deploy.sh
       env:
         CI: true
