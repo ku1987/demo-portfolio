@@ -37,6 +37,8 @@ jobs:
         key: ${{ secrets.SSH_DEPLOYMENT_KEY }}
         script: |
             sudo su - root
+            cd demo-portofolio/
+            ls -la
             bash deploy.sh
       env:
         CI: true
