@@ -1,3 +1,4 @@
 git pull origin master
-npm run build --prefix client
-npm run start --prefix client
+cd client
+npm run build
+pm2 --name HelloWorld start npm -- start
