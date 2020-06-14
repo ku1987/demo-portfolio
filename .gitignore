@@ -3,5 +3,4 @@
 /client/node_modules
 /_client/node_modules
 /client/.next
-*package-lock.json
 *yarn.lock
