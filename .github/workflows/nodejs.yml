@@ -35,6 +35,6 @@ jobs:
         username: ${{ secrets.USERNAME }}
         port: ${{ secrets.PORT }}
         key: ${{ secrets.SSH_DEPLOYMENT_KEY }}
-        script: deploy.sh
+        script: bash deploy.sh
       env:
         CI: true
