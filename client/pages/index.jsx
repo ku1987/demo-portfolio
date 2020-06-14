@@ -23,6 +23,7 @@ const Index = () => (
         <p>I&apos;m a software engineer in Tokyo, Japan.</p>
         <p>My skills and details are here.</p>
         <p className="textLink"><Link href="/about"><a>About</a></Link></p>
+        <p>test</p>
       </div>
     </main>
   </div>
