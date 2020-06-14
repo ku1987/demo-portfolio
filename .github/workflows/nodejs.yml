@@ -36,6 +36,7 @@ jobs:
         port: ${{ secrets.PORT }}
         key: ${{ secrets.SSH_DEPLOYMENT_KEY }}
         script: |
-            bash web/demo-portfolio/deploy.sh
+            cd web/demo-portfolio/
+            bash deploy.sh
       env:
         CI: true
