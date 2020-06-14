@@ -1,3 +1,4 @@
+sudo su - root
 cd demo-portofolio/
 git pull origin master
 npm run build --prefix client
