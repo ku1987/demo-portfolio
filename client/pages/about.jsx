@@ -16,7 +16,6 @@ const About = () => (
           <img src="/img/about-6.jpg" loading="lazy" alt="" />
           <img src="/img/about-7.jpg" loading="lazy" alt="" />
           <img src="/img/about-8.jpg" loading="lazy" alt="" />
-          <img src="/img/about-9.jpg" loading="lazy" alt="" />
         </div>
       </div>
     </main>
