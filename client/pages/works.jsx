@@ -6,8 +6,8 @@ import { uuid } from 'uuidv4';
 import BASE_URL from '../components/config';
 import Navbar from '../components/navbar';
 
-const PATH = 'works';
 const SERVER_URL = `${BASE_URL}/${PATH}`;
+const PATH = 'works';
 
 const mapWorks = (works) => works.map((work) => (
   <li key={uuid()} className="works-item">

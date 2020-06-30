@@ -3,7 +3,13 @@
 /* eslint-disable max-len */
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import styled from 'styled-components';
+
 import Navbar from '../components/navbar';
+
+const H1Test = styled.h1`
+  color: #161646; 
+`;
 
 const Contact = () => {
   const {
@@ -16,7 +22,7 @@ const Contact = () => {
       <Navbar />
       <main>
         <div className="container">
-          <h1>Contact</h1>
+          <H1Test>Contact</H1Test>
           <p>Please contact me here.</p>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="formElm">
