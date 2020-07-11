@@ -11,6 +11,7 @@ const cors = require('@koa/cors');
 
 const indexRouter = require('./routes/index');
 const worksRouter = require('./routes/works');
+const contactRouter = require('./routes/contact');
 
 const config = require('./config');
 
@@ -30,6 +31,7 @@ app.use(cors());
 app.use(bodyParser());
 app.use(indexRouter.routes());
 app.use(worksRouter.routes());
+app.use(contactRouter.routes());
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}...`);

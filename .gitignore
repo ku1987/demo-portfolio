@@ -4,3 +4,4 @@
 /_client/node_modules
 /client/.next
 *yarn.lock
+.env

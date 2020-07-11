@@ -1,12 +1,19 @@
+require('dotenv').config();
+
+const userName = process.env.USER_NAME;
+const passWord = process.env.DB_PASSWORD;
+const dbName = process.env.DB_NAME;
+const host = process.env.DB_HOST;
+
 const config = {
   port: 3002,
   db: {
     client: 'pg',
-    username: null,
-    password: null,
-    host: null,
+    userName,
+    passWord,
+    host,
+    dbName,
     port: 5432,
-    name: null,
   },
 };
 
