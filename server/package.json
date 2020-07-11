@@ -26,7 +26,8 @@
     "koa-static": "^5.0.0",
     "pg": "^8.3.0",
     "redis": "^3.0.2",
-    "redis-cli": "^1.4.0"
+    "redis-cli": "^1.4.0",
+    "uuidv4": "^6.1.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
