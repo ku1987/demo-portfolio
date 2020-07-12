@@ -34,7 +34,7 @@ const handleConfirm = async (name, mail, content, router) => {
     }
     clearLocalStorage();
     router.push({
-      pathname: '/',
+      pathname: '/done',
     });
   } catch (error) {
     console.error(error);
