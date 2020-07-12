@@ -1,10 +1,13 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-fragments */
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable max-len */
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
+import { useRouter } from 'next/router';
 
+import useLocalStorage from '../common/common';
 import Navbar from '../components/navbar';
 
 const H1Test = styled.h1`
@@ -15,7 +18,22 @@ const Contact = () => {
   const {
     register, handleSubmit, errors,
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const [value, setValue] = useState(null);
+
+  const [name, setName] = useLocalStorage('name', '');
+  const [mail, setMail] = useLocalStorage('mail', '');
+  const [text, setText] = useLocalStorage('text', '');
+
+  const router = useRouter();
+
+  const onSubmit = (data) => {
+    setName(data.name);
+    setMail(data.mail);
+    setText(data.text);
+    router.push({
+      pathname: '/confirm',
+    });
+  };
 
   return (
     <div>
@@ -27,7 +45,7 @@ const Contact = () => {
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="formElm">
               <label htmlFor="Name">Name
-                {errors.name && <span className="error">This field is required</span>}
+                {errors.name && <span className="error">This field is required.</span>}
                 <input
                   name="name"
                   placeholder="Your name..."
@@ -35,15 +53,15 @@ const Contact = () => {
                 />
               </label>
               <label htmlFor="Mail">Mail
-                {errors.mail && <span className="error">This field is required</span>}
+                {errors.mail && <span className="error">This field is required.</span>}
                 <input
                   name="mail"
                   placeholder="Your mail..."
                   ref={register({ required: true })}
                 />
               </label>
-              <label htmlFor="text">Mail
-                {errors.text && <span className="error">This field is required</span>}
+              <label htmlFor="text">Text
+                {errors.text && <span className="error">This field is required.</span>}
                 <textarea
                   name="text"
                   placeholder="Leave message here..."

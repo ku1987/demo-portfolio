@@ -55,6 +55,7 @@ router.post('/contacts', async (ctx) => {
       content,
       createdAt,
     };
+    console.log(record);
     const data = await contactsQuery.addContact(record);
     ctx.body = {
       status: 'success',
