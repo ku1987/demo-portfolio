@@ -3,28 +3,36 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import BASE_URL from '../../components/config';
 import Navbar from '../../components/navbar';
+import constants from '../../components/const';
 
 const PATH = 'work';
 const SERVER_URL = `${BASE_URL}/${PATH}`;
+const TITLE = `Work | ${constants.SITE_TITLE}`;
 
-const Page = ({ work }) => (
-  <div>
-    <Navbar />
-    <main>
-      <div className="container">
-        <div className="header-img">
-          <img src={`/img/${work.img}`} alt={work.title} />
+const Page = ({ work }) => {
+  if (process.browser) {
+    // eslint-disable-next-line no-undef
+    document.title = TITLE;
+  }
+  return (
+    <div>
+      <Navbar />
+      <main>
+        <div className="container">
+          <div className="header-img">
+            <img src={`/img/${work.img}`} alt={work.title} />
+          </div>
+          <h1>{work.title}</h1>
+          <h2>{work.desc}</h2>
+          <p>{work.body}</p>
+          <p className="textLink">
+            <a href="/">{work.url}</a>
+          </p>
         </div>
-        <h1>{work.title}</h1>
-        <h2>{work.desc}</h2>
-        <p>{work.body}</p>
-        <p className="textLink">
-          <a href="/">{work.url}</a>
-        </p>
-      </div>
-    </main>
-  </div>
-);
+      </main>
+    </div>
+  );
+};
 
 Page.getInitialProps = async ({ query }) => {
   const { id } = query;

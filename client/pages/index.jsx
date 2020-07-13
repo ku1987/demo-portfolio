@@ -4,6 +4,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Navbar from '../components/navbar';
+import constants from '../components/const';
 
 const Index = () => (
   <div id="top">
@@ -11,7 +12,7 @@ const Index = () => (
     <div className="App-header">
       <img src="/img/header_img.jpg" alt="" />
       <div className="header-title">
-        <h1>Demo Portfolio</h1>
+        <h1>{constants.SITE_TITLE}</h1>
       </div>
     </div>
     <main>

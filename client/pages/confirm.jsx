@@ -7,10 +7,12 @@ import { useRouter } from 'next/router';
 
 import useLocalStorage from '../common/common';
 import Navbar from '../components/navbar';
+import constants from '../components/const';
 import BASE_URL from '../components/config';
 
 const PATH = 'contacts';
 const SERVER_URL = `${BASE_URL}/${PATH}`;
+const TITLE = `Confirm | ${constants.SITE_TITLE}`;
 
 const config = {
   headers: {
@@ -42,6 +44,10 @@ const handleConfirm = async (name, mail, content, router) => {
 };
 
 const Confirm = () => {
+  if (process.browser) {
+    // eslint-disable-next-line no-undef
+    document.title = TITLE;
+  }
   const router = useRouter();
 
   const [name, setName] = useLocalStorage('name', '');

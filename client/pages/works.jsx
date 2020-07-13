@@ -4,9 +4,11 @@ import axios from 'axios';
 import { uuid } from 'uuidv4';
 import BASE_URL from '../components/config';
 import Navbar from '../components/navbar';
+import constants from '../components/const';
 
 const PATH = 'works';
 const SERVER_URL = `${BASE_URL}/${PATH}`;
+const TITLE = `Works | ${constants.SITE_TITLE}`;
 
 const mapWorks = (works) => works.map((work) => (
   <li key={uuid()} className="works-item">
@@ -23,6 +25,10 @@ const mapWorks = (works) => works.map((work) => (
 ));
 
 const Works = () => {
+  if (process.browser) {
+    // eslint-disable-next-line no-undef
+    document.title = TITLE;
+  }
   const [works, setWorks] = useState(null);
   useEffect(() => {
     (async () => {

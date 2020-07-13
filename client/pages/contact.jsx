@@ -9,12 +9,19 @@ import { useRouter } from 'next/router';
 
 import useLocalStorage from '../common/common';
 import Navbar from '../components/navbar';
+import constants from '../components/const';
 
 const H1Test = styled.h1`
   color: #161646; 
 `;
 
+const TITLE = `Contact | ${constants.SITE_TITLE}`;
+
 const Contact = () => {
+  if (process.browser) {
+    // eslint-disable-next-line no-undef
+    document.title = TITLE;
+  }
   const {
     register, handleSubmit, errors,
   } = useForm();

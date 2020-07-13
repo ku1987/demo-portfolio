@@ -3,8 +3,15 @@ import styled from 'styled-components';
 import { useRouter } from 'next/router';
 
 import Navbar from '../components/navbar';
+import constants from '../components/const';
+
+const TITLE = `Done! | ${constants.SITE_TITLE}`;
 
 const Done = () => {
+  if (process.browser) {
+    // eslint-disable-next-line no-undef
+    document.title = TITLE;
+  }
   const router = useRouter();
   return (
     <div>
