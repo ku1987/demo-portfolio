@@ -8,11 +8,11 @@ import { useRouter } from 'next/router';
 import useLocalStorage from '../common/common';
 import Navbar from '../components/navbar';
 import constants from '../components/const';
-import BASE_URL from '../components/config';
 
 const PATH = 'contacts';
-const SERVER_URL = `${BASE_URL}/${PATH}`;
+const SERVER_URL = `${constants.BASE_URL}/${PATH}`;
 const TITLE = `Confirm | ${constants.SITE_TITLE}`;
+const { FadeIn } = constants;
 
 const config = {
   headers: {
@@ -56,7 +56,7 @@ const Confirm = () => {
 
   if (!name || !mail || !text) {
     return (
-      <div>
+      <FadeIn>
         <Navbar />
         <main>
           <div className="container">
@@ -67,7 +67,7 @@ const Confirm = () => {
             </div>
           </div>
         </main>
-      </div>
+      </FadeIn>
     );
   }
   return (
@@ -102,6 +102,10 @@ const Title = styled.h2`
   font-size: 1.8rem;
   font-weight: 600;
   text-align: left;
+  width: 80%;
+  margin: auto;
+  padding-bottom: 3px;
+  border-bottom: 1.5px solid ${constants.primaryColor};
 `;
 
 const Body = styled.p`

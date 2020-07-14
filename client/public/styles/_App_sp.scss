@@ -132,8 +132,6 @@ ul.works-grid {
 }
 
 .works-item {
-  animation: opacScale 1000ms ease-out;
-  animation-fill-mode: backwards;
   a img {
     border-radius: 3px;
     height: 240px;
@@ -212,10 +210,7 @@ input[type='number'] {
 .App-header {
   height: 100vh;
   background-size: cover;
-  animation: opac 1000ms ease-out;
-  animation-fill-mode: backwards;
   position: relative;
-  // clip-path: polygon(50% 100%, 100% 65%, 60% 100%, 0 65%, 0 0);
 
   h1 {
     font-size: 4rem;

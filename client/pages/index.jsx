@@ -6,8 +6,10 @@ import Link from 'next/link';
 import Navbar from '../components/navbar';
 import constants from '../components/const';
 
+const { FadeIn } = constants;
+
 const Index = () => (
-  <div id="top">
+  <FadeIn id="top">
     <Navbar />
     <div className="App-header">
       <img src="/img/header_img.jpg" alt="" />
@@ -26,7 +28,7 @@ const Index = () => (
         <p className="textLink"><Link href="/about"><a>About</a></Link></p>
       </div>
     </main>
-  </div>
+  </FadeIn>
 );
 
 export default Index;

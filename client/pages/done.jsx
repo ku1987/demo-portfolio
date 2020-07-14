@@ -6,6 +6,7 @@ import Navbar from '../components/navbar';
 import constants from '../components/const';
 
 const TITLE = `Done! | ${constants.SITE_TITLE}`;
+const { FadeIn } = constants;
 
 const Done = () => {
   if (process.browser) {
@@ -14,7 +15,7 @@ const Done = () => {
   }
   const router = useRouter();
   return (
-    <div>
+    <FadeIn>
       <Navbar />
       <main>
         <div className="container">
@@ -26,7 +27,7 @@ const Done = () => {
           </div>
         </div>
       </main>
-    </div>
+    </FadeIn>
   );
 };
 

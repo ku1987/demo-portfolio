@@ -12,66 +12,6 @@
   --transition-speed-slow: 700ms;
 }
 
-@-webkit-keyframes opac {
-  from {
-    opacity: 0;
-    -webkit-filter: hue-rotate(90deg);
-            filter: hue-rotate(90deg);
-  }
-  to {
-    opacity: 1;
-    -webkit-filter: hue-rotate(0deg);
-            filter: hue-rotate(0deg);
-  }
-}
-
-@keyframes opac {
-  from {
-    opacity: 0;
-    -webkit-filter: hue-rotate(90deg);
-            filter: hue-rotate(90deg);
-  }
-  to {
-    opacity: 1;
-    -webkit-filter: hue-rotate(0deg);
-            filter: hue-rotate(0deg);
-  }
-}
-
-@-webkit-keyframes opacScale {
-  from {
-    opacity: 0;
-    -webkit-transform: scale(0.95);
-            transform: scale(0.95);
-    -webkit-filter: hue-rotate(90deg);
-            filter: hue-rotate(90deg);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-filter: hue-rotate(0deg);
-            filter: hue-rotate(0deg);
-  }
-}
-
-@keyframes opacScale {
-  from {
-    opacity: 0;
-    -webkit-transform: scale(0.95);
-            transform: scale(0.95);
-    -webkit-filter: hue-rotate(90deg);
-            filter: hue-rotate(90deg);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-filter: hue-rotate(0deg);
-            filter: hue-rotate(0deg);
-  }
-}
-
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -242,13 +182,6 @@ ul.works-grid {
   z-index: 1;
 }
 
-.works-item {
-  -webkit-animation: opacScale 1000ms ease-out;
-          animation: opacScale 1000ms ease-out;
-  -webkit-animation-fill-mode: backwards;
-          animation-fill-mode: backwards;
-}
-
 .works-item a img {
   border-radius: 3px;
   height: 240px;
@@ -335,10 +268,6 @@ input[type='number'] {
 .App-header {
   height: 100vh;
   background-size: cover;
-  -webkit-animation: opac 1000ms ease-out;
-          animation: opac 1000ms ease-out;
-  -webkit-animation-fill-mode: backwards;
-          animation-fill-mode: backwards;
   position: relative;
 }
 
@@ -564,12 +493,6 @@ span.error {
     position: relative;
     z-index: 1;
   }
-  .works-item {
-    -webkit-animation: opacScale 1000ms ease-out;
-            animation: opacScale 1000ms ease-out;
-    -webkit-animation-fill-mode: backwards;
-            animation-fill-mode: backwards;
-  }
   .works-item a img {
     border-radius: 3px;
     height: 240px;
@@ -647,10 +570,6 @@ span.error {
     height: 100vh;
     background-size: cover;
     padding-left: 8rem;
-    -webkit-animation: opac 1000ms ease-out;
-            animation: opac 1000ms ease-out;
-    -webkit-animation-fill-mode: backwards;
-            animation-fill-mode: backwards;
     position: relative;
   }
   .App-header h1 {

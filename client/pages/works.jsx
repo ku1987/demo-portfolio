@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import axios from 'axios';
 import { uuid } from 'uuidv4';
-import BASE_URL from '../components/config';
 import Navbar from '../components/navbar';
 import constants from '../components/const';
 
 const PATH = 'works';
-const SERVER_URL = `${BASE_URL}/${PATH}`;
+const SERVER_URL = `${constants.BASE_URL}/${PATH}`;
 const TITLE = `Works | ${constants.SITE_TITLE}`;
+const { FadeIn } = constants;
 
 const mapWorks = (works) => works.map((work) => (
   <li key={uuid()} className="works-item">
@@ -42,7 +42,7 @@ const Works = () => {
   }, []);
   if (works) {
     return (
-      <div>
+      <FadeIn>
         <Navbar />
         <main>
           <div className="container">
@@ -52,7 +52,7 @@ const Works = () => {
             </ul>
           </div>
         </main>
-      </div>
+      </FadeIn>
     );
   }
   return null;

@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import BASE_URL from '../../components/config';
 import Navbar from '../../components/navbar';
 import constants from '../../components/const';
 
 const PATH = 'work';
-const SERVER_URL = `${BASE_URL}/${PATH}`;
+const SERVER_URL = `${constants.BASE_URL}/${PATH}`;
 const TITLE = `Work | ${constants.SITE_TITLE}`;
 
 const Page = ({ work }) => {

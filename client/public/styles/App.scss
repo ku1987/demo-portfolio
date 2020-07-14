@@ -125,8 +125,6 @@
   }
   
   .works-item {
-    animation: opacScale 1000ms ease-out;
-    animation-fill-mode: backwards;
     a img {
       border-radius: 3px;
       height: 240px;
@@ -205,8 +203,6 @@
     height: 100vh;
     background-size: cover;
     padding-left: 8rem;
-    animation: opac 1000ms ease-out;
-    animation-fill-mode: backwards;
     position: relative;
   
     h1 {

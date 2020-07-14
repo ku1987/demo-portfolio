@@ -3,6 +3,7 @@ import Navbar from '../components/navbar';
 import constants from '../components/const';
 
 const TITLE = `About | ${constants.SITE_TITLE}`;
+const { FadeIn } = constants;
 
 const About = () => {
   if (process.browser) {
@@ -10,7 +11,7 @@ const About = () => {
     document.title = TITLE;
   }
   return (
-    <div>
+    <FadeIn>
       <Navbar />
       <main>
         <div className="container">
@@ -27,7 +28,7 @@ const About = () => {
           </div>
         </div>
       </main>
-    </div>
+    </FadeIn>
   );
 };
 

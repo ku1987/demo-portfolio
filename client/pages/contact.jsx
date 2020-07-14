@@ -4,18 +4,14 @@
 /* eslint-disable max-len */
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import styled from 'styled-components';
 import { useRouter } from 'next/router';
 
 import useLocalStorage from '../common/common';
 import Navbar from '../components/navbar';
 import constants from '../components/const';
 
-const H1Test = styled.h1`
-  color: #161646; 
-`;
-
 const TITLE = `Contact | ${constants.SITE_TITLE}`;
+const { FadeIn } = constants;
 
 const Contact = () => {
   if (process.browser) {
@@ -43,44 +39,46 @@ const Contact = () => {
   };
 
   return (
-    <div>
-      <Navbar />
-      <main>
-        <div className="container">
-          <H1Test>Contact</H1Test>
-          <p>Please contact me here.</p>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="formElm">
-              <label htmlFor="Name">Name
-                {errors.name && <span className="error">This field is required.</span>}
-                <input
-                  name="name"
-                  placeholder="Your name..."
-                  ref={register({ required: true })}
-                />
-              </label>
-              <label htmlFor="Mail">Mail
-                {errors.mail && <span className="error">This field is required.</span>}
-                <input
-                  name="mail"
-                  placeholder="Your mail..."
-                  ref={register({ required: true })}
-                />
-              </label>
-              <label htmlFor="text">Text
-                {errors.text && <span className="error">This field is required.</span>}
-                <textarea
-                  name="text"
-                  placeholder="Leave message here..."
-                  ref={register({ required: true })}
-                />
-              </label>
-            </div>
-            <input type="submit" />
-          </form>
-        </div>
-      </main>
-    </div>
+    <FadeIn>
+      <div>
+        <Navbar />
+        <main>
+          <div className="container">
+            <h1>Contact</h1>
+            <p>Please contact me here.</p>
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <div className="formElm">
+                <label htmlFor="Name">Name
+                  {errors.name && <span className="error">This field is required.</span>}
+                  <input
+                    name="name"
+                    placeholder="Your name..."
+                    ref={register({ required: true })}
+                  />
+                </label>
+                <label htmlFor="Mail">Mail
+                  {errors.mail && <span className="error">This field is required.</span>}
+                  <input
+                    name="mail"
+                    placeholder="Your mail..."
+                    ref={register({ required: true })}
+                  />
+                </label>
+                <label htmlFor="text">Text
+                  {errors.text && <span className="error">This field is required.</span>}
+                  <textarea
+                    name="text"
+                    placeholder="Leave message here..."
+                    ref={register({ required: true })}
+                  />
+                </label>
+              </div>
+              <input type="submit" />
+            </form>
+          </div>
+        </main>
+      </div>
+    </FadeIn>
   );
 };
 
