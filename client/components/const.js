@@ -21,7 +21,7 @@ const fadeIn = keyframes`
 `;
 
 const FadeIn = styled.div`
-  animation: ${fadeIn} .5s ease-in-out;
+  animation: ${fadeIn} .4s ease-in-out;
 `;
 
 const primaryColor = '#23232e';
