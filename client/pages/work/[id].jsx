@@ -4,6 +4,8 @@ import axios from 'axios';
 import Navbar from '../../components/navbar';
 import constants from '../../components/const';
 
+const { FadeIn } = constants;
+
 const PATH = 'works';
 const SERVER_URL = `${constants.BASE_URL}/${PATH}`;
 const TITLE = `Work | ${constants.SITE_TITLE}`;
@@ -14,7 +16,7 @@ const Page = ({ work }) => {
     document.title = TITLE;
   }
   return (
-    <div>
+    <FadeIn>
       <Navbar />
       <main>
         <div className="container">
@@ -29,7 +31,7 @@ const Page = ({ work }) => {
           </p>
         </div>
       </main>
-    </div>
+    </FadeIn>
   );
 };
 
