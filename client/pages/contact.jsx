@@ -21,7 +21,6 @@ const Contact = () => {
   const {
     register, handleSubmit, errors,
   } = useForm();
-  const [value, setValue] = useState(null);
 
   const [name, setName] = useLocalStorage('name', '');
   const [mail, setMail] = useLocalStorage('mail', '');
