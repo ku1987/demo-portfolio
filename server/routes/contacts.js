@@ -2,6 +2,7 @@ const Router = require('koa-router');
 const { uuid } = require('uuidv4');
 const contactsQuery = require('../db/queries/contacts');
 const common = require('./common');
+const { isValidContact } = require('../validation/works');
 
 const router = new Router();
 
@@ -14,9 +15,7 @@ router.get('/contacts', async (ctx) => {
     }
     ctx.body = {
       status: 'success',
-      data: {
-        contacts,
-      },
+      contacts,
     };
   } catch (error) {
     console.error(error.message);
@@ -34,9 +33,7 @@ router.get('/contacts/:contactId', async (ctx) => {
     }
     ctx.body = {
       status: 'success',
-      data: {
-        contact,
-      },
+      contact,
     };
   } catch (error) {
     console.error(error.message);
@@ -48,14 +45,17 @@ router.post('/contacts', async (ctx) => {
   const contactId = uuid();
   const { name, mail, content } = ctx.request.body;
   try {
-    // TODO contactId validation
-    const newContract = {
+    const newContact = {
       contactId,
       name,
       mail,
       content,
     };
-    const record = common.generateInsertRecord(newContract);
+    if (!isValidContact(newContact)) {
+      common.handleError(ctx, 403, 'Invalid contact.');
+      return;
+    }
+    const record = common.generateInsertRecord(newContact);
     const data = await contactsQuery.addContact(record);
     ctx.body = {
       status: 'success',

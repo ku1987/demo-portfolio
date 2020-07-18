@@ -15,9 +15,7 @@ router.get('/works', async (ctx) => {
     }
     ctx.body = {
       status: 'success',
-      data: {
-        works,
-      },
+      works,
     };
   } catch (error) {
     console.error(error.message);
@@ -25,7 +23,7 @@ router.get('/works', async (ctx) => {
   }
 });
 
-router.get('/work/:id', async (ctx) => {
+router.get('/works/:id', async (ctx) => {
   const { id } = ctx.params;
   try {
     const work = await worksQuery.getSingleWork({ id });
@@ -35,9 +33,7 @@ router.get('/work/:id', async (ctx) => {
     }
     ctx.body = {
       status: 'success',
-      data: {
-        work,
-      },
+      work,
     };
   } catch (error) {
     console.error(error.message);

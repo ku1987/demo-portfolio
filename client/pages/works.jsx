@@ -34,7 +34,7 @@ const Works = () => {
     (async () => {
       try {
         const res = await axios.get(SERVER_URL);
-        setWorks(res.data.data.works);
+        setWorks(res.data.works);
       } catch (error) {
         console.error(error);
       }

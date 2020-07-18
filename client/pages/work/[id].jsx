@@ -4,7 +4,7 @@ import axios from 'axios';
 import Navbar from '../../components/navbar';
 import constants from '../../components/const';
 
-const PATH = 'work';
+const PATH = 'works';
 const SERVER_URL = `${constants.BASE_URL}/${PATH}`;
 const TITLE = `Work | ${constants.SITE_TITLE}`;
 
@@ -36,7 +36,7 @@ const Page = ({ work }) => {
 Page.getInitialProps = async ({ query }) => {
   const { id } = query;
   const res = await axios.get(`${SERVER_URL}/${id}`);
-  const { work } = res.data.data;
+  const { work } = res.data;
   return { work };
 };
 
