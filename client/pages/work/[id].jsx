@@ -4,7 +4,7 @@ import axios from 'axios';
 import Navbar from '../../components/navbar';
 import constants from '../../components/const';
 
-const PATH = 'works';
+const PATH = 'work';
 const SERVER_URL = `${constants.BASE_URL}/${PATH}`;
 const TITLE = `Work | ${constants.SITE_TITLE}`;
 

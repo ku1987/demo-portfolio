@@ -17,14 +17,14 @@ const About = () => {
         <div className="container">
           <h1>About</h1>
           <div className="img-container">
-            <img src="/img/about-1.jpg" loading="lazy" alt="" />
-            <img src="/img/about-2.jpg" loading="lazy" alt="" />
-            <img src="/img/about-3.jpg" loading="lazy" alt="" />
-            <img src="/img/about-4.jpg" loading="lazy" alt="" />
-            <img src="/img/about-5.jpg" loading="lazy" alt="" />
-            <img src="/img/about-6.jpg" loading="lazy" alt="" />
-            <img src="/img/about-7.jpg" loading="lazy" alt="" />
-            <img src="/img/about-8.jpg" loading="lazy" alt="" />
+            <img src="/img/about-1.jpg" alt="" />
+            <img src="/img/about-2.jpg" alt="" />
+            <img src="/img/about-3.jpg" alt="" />
+            <img src="/img/about-4.jpg" alt="" />
+            <img src="/img/about-5.jpg" alt="" />
+            <img src="/img/about-6.jpg" alt="" />
+            <img src="/img/about-7.jpg" alt="" />
+            <img src="/img/about-8.jpg" alt="" />
           </div>
         </div>
       </main>

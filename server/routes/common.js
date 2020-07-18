@@ -15,7 +15,10 @@ const handleError = (ctx, errorCode, message) => {
   };
 };
 
-const handleInternalError = (ctx) => handleError(ctx, 500, 'Internal server error.');
+const handleInternalError = (ctx) => {
+  ctx.status = 500;
+  return handleError(ctx, 500, 'Internal server error.');
+};
 
 /**
  * @param {object} record Object to be registered to the database.
