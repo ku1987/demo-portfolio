@@ -20,6 +20,7 @@ router.get('/works', async (ctx) => {
       },
     };
   } catch (error) {
+    console.error(error.message);
     common.handleInternalError(ctx);
   }
 });
@@ -39,6 +40,7 @@ router.get('/works/:id', async (ctx) => {
       },
     };
   } catch (error) {
+    console.error(error.message);
     common.handleInternalError(ctx);
   }
 });

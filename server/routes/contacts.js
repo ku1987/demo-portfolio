@@ -19,6 +19,7 @@ router.get('/contacts', async (ctx) => {
       },
     };
   } catch (error) {
+    console.error(error.message);
     common.handleInternalError(ctx);
   }
 });
@@ -38,6 +39,7 @@ router.get('/contacts/:contactId', async (ctx) => {
       },
     };
   } catch (error) {
+    console.error(error.message);
     common.handleInternalError(ctx);
   }
 });
@@ -60,6 +62,7 @@ router.post('/contacts', async (ctx) => {
       data,
     };
   } catch (error) {
+    console.error(error.message);
     common.handleInternalError(ctx);
   }
 });
