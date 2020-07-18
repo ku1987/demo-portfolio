@@ -24,10 +24,10 @@ router.get('/works', async (ctx) => {
   }
 });
 
-router.get('/works/:workId', async (ctx) => {
-  const { workId } = ctx.params;
+router.get('/works/:id', async (ctx) => {
+  const { id } = ctx.params;
   try {
-    const work = await worksQuery.getSingleWork({ workId });
+    const work = await worksQuery.getSingleWork({ id });
     if (!work) {
       common.handleError(ctx, 404, 'Work of this ID not found.');
       return;

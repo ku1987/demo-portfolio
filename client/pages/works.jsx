@@ -14,10 +14,10 @@ const mapWorks = (works) => works.map((work) => (
   <li key={uuid()} className="works-item">
     <Link href={`/work/${work.id}`}>
       <a>
-        <img src={`/img/${work.img}`} alt={work.desc} />
+        <img src={`/img/${work.img}`} alt={work.description} />
         <div className="works-text">
           <h3>{work.title}</h3>
-          <p>{work.desc}</p>
+          <p>{work.description}</p>
         </div>
       </a>
     </Link>
@@ -34,7 +34,8 @@ const Works = () => {
     (async () => {
       try {
         const res = await axios.get(SERVER_URL);
-        setWorks(res.data.works);
+        console.log(res.data.data.works);
+        setWorks(res.data.data.works);
       } catch (error) {
         console.error(error);
       }
