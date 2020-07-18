@@ -12,7 +12,7 @@ const { FadeIn } = constants;
 
 const mapWorks = (works) => works.map((work) => (
   <li key={uuid()} className="works-item">
-    <Link href={`/work/${work.id}`}>
+    <Link href={`/${PATH}/${work.id}`}>
       <a>
         <img src={`/img/${work.img}`} alt={work.description} />
         <div className="works-text">

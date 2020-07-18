@@ -22,7 +22,7 @@ const config = {
 };
 
 const clearLocalStorage = () => {
-  if (window) {
+  if (process.browser) {
     window.localStorage.removeItem('name');
     window.localStorage.removeItem('mail');
     window.localStorage.removeItem('text');
@@ -36,7 +36,7 @@ const handleConfirm = async (name, mail, content, router) => {
     if (res.data.status !== 'success') {
       throw new Error(`${res.data.data.code}: ${res.data.data.message}`);
     }
-    if (window) {
+    if (process.browser) {
       clearLocalStorage();
     }
     router.push({
