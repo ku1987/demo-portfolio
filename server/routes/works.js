@@ -25,7 +25,7 @@ router.get('/works', async (ctx) => {
   }
 });
 
-router.get('/works/:id', async (ctx) => {
+router.get('/work/:id', async (ctx) => {
   const { id } = ctx.params;
   try {
     const work = await worksQuery.getSingleWork({ id });
