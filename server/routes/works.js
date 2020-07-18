@@ -1,31 +1,81 @@
 const Router = require('koa-router');
-const works = require('../public/works');
+const { uuid } = require('uuidv4');
+const common = require('./common');
+const worksQuery = require('../db/queries/works');
+const { isValidWork } = require('../validation/works');
 
 const router = new Router();
 
 router.get('/works', async (ctx) => {
-  ctx.body = {
-    works,
-  };
-});
-
-router.get('/work/:id', async (ctx) => {
-  const workId = Number(ctx.params.id);
-  const targetWork = works.find((work) => work.id === workId);
-  if (!targetWork) {
-    ctx.response.status = 404;
+  try {
+    const works = await worksQuery.getAllWorks();
+    if (!works) {
+      common.handleError(ctx, 404, 'Works not found.');
+      return;
+    }
     ctx.body = {
-      status: 'failure',
+      status: 'success',
       data: {
-        message: 'Not found',
+        works,
       },
     };
-    return;
+  } catch (error) {
+    common.handleInternalError(ctx);
   }
-  const work = targetWork;
-  ctx.body = {
-    work,
-  };
+});
+
+router.get('/works/:workId', async (ctx) => {
+  const { workId } = ctx.params;
+  try {
+    const work = await worksQuery.getSingleWork({ workId });
+    if (!work) {
+      common.handleError(ctx, 404, 'Work of this ID not found.');
+      return;
+    }
+    ctx.body = {
+      status: 'success',
+      data: {
+        work,
+      },
+    };
+  } catch (error) {
+    common.handleInternalError(ctx);
+  }
+});
+
+router.post('/works', async (ctx) => {
+  const workId = uuid();
+  const {
+    title, description, img, url, body,
+  } = ctx.request.body;
+  try {
+    const newWork = {
+      workId,
+      title,
+      description,
+      img,
+      url,
+      body,
+    };
+    if (!isValidWork(newWork)) {
+      common.handleError(ctx, 403, 'Invalid work.');
+      return;
+    }
+    const work = await worksQuery.getSingleWork({ title });
+    if (work) {
+      common.handleError(ctx, 400, 'This title of work already exists.');
+      return;
+    }
+    const record = common.generateInsertRecord(newWork);
+    const data = await worksQuery.addWork(record);
+    ctx.body = {
+      status: 'success',
+      data,
+    };
+  } catch (error) {
+    console.error(error.message);
+    common.handleInternalError(ctx);
+  }
 });
 
 module.exports = router;

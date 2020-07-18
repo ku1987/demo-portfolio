@@ -17,7 +17,18 @@ const handleError = (ctx, errorCode, message) => {
 
 const handleInternalError = (ctx) => handleError(ctx, 500, 'Internal server error.');
 
+/**
+ * @param {object} record Object to be registered to the database.
+ * @returns {object} Object added created date (UNIX timestamp).
+ */
+const generateInsertRecord = (record) => {
+  const createdAt = Math.floor(Date.now() / 1000);
+  const deletedAt = 0;
+  return { ...record, createdAt, deletedAt };
+};
+
 module.exports = {
   handleError,
   handleInternalError,
+  generateInsertRecord,
 };
