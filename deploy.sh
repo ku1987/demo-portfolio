@@ -1,4 +1,3 @@
-git pull origin master
 npm ci --prefix client
 npm run build --prefix client
 pm2 stop client
