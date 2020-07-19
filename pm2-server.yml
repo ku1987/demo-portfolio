@@ -1,0 +1,4 @@
+name: server
+script: npm run start --prefix server
+watch: true
+log-date-format: "YYYY-MM-DD HH:mm Z"

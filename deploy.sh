@@ -1,8 +1,8 @@
 git pull origin master
-cd client
-npm ci
-npm run build
-pm2 restart client
-cd ../server
-npm ci
-pm2 restart server
+npm ci --prefix client
+npm run build --prefix client
+pm2 stop client
+pm2 start pm2-client
+npm ci --prefix client
+pm2 stop server
+pm2 start pm2-server
