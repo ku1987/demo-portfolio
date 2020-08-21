@@ -7,6 +7,10 @@
     // ...
     "react-hooks"
   ],
+  "env": {
+    "browser": true,
+    "node": true
+  },
   "rules": {
     // ...
     "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks

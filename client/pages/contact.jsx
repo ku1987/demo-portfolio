@@ -15,7 +15,6 @@ const { FadeIn } = constants;
 
 const Contact = () => {
   if (process.browser) {
-    // eslint-disable-next-line no-undef
     document.title = TITLE;
   }
   const {

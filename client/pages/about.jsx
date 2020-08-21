@@ -7,7 +7,6 @@ const { FadeIn } = constants;
 
 const About = () => {
   if (process.browser) {
-    // eslint-disable-next-line no-undef
     document.title = TITLE;
   }
   return (

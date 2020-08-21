@@ -26,14 +26,14 @@ const mapWorks = (works) => works.map((work) => (
 
 const Works = () => {
   if (process.browser) {
-    // eslint-disable-next-line no-undef
     document.title = TITLE;
   }
-  const [works, setWorks] = useState(null);
+  const [works, setWorks] = useState([]);
   useEffect(() => {
     (async () => {
       try {
         const res = await axios.get(SERVER_URL);
+        console.log(res);
         setWorks(res.data.works);
       } catch (error) {
         console.error(error);

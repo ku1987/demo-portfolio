@@ -2,7 +2,7 @@ const Router = require('koa-router');
 const { uuid } = require('uuidv4');
 const contactsQuery = require('../db/queries/contacts');
 const common = require('./common');
-const { isValidContact } = require('../validation/works');
+const { isValidContact } = require('../validation/contact');
 
 const router = new Router();
 

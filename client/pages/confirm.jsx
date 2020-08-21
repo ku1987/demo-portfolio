@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import styled from 'styled-components';
@@ -49,7 +48,6 @@ const handleConfirm = async (name, mail, content, router) => {
 
 const Confirm = () => {
   if (process.browser) {
-    // eslint-disable-next-line no-undef
     document.title = TITLE;
   }
   const router = useRouter();

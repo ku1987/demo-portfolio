@@ -12,7 +12,6 @@ const TITLE = `Work | ${constants.SITE_TITLE}`;
 
 const Page = ({ work }) => {
   if (process.browser) {
-    // eslint-disable-next-line no-undef
     document.title = TITLE;
   }
   return (

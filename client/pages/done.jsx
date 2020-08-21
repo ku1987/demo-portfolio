@@ -10,7 +10,6 @@ const { FadeIn } = constants;
 
 const Done = () => {
   if (process.browser) {
-    // eslint-disable-next-line no-undef
     document.title = TITLE;
   }
   const router = useRouter();

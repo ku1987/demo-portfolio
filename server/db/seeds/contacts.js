@@ -8,6 +8,7 @@ exports.seed = (knex) => knex(TABLES.CONTACTS).del()
       mail: 'test-contact-1@sample.com',
       content: 'Test for contact 1.',
       createdAt: 1594439312,
+      deletedAt: 0,
     },
     {
       contactId: 'test-contact-id-2',
@@ -15,6 +16,7 @@ exports.seed = (knex) => knex(TABLES.CONTACTS).del()
       mail: 'test-contact-2@sample.com',
       content: 'Test for contact 2.',
       createdAt: 1594439313,
+      deletedAt: 0,
     },
     {
       contactId: 'test-contact-id-3',
@@ -22,5 +24,6 @@ exports.seed = (knex) => knex(TABLES.CONTACTS).del()
       mail: 'test-contact-3@sample.com',
       content: 'Test for contact 3.',
       createdAt: 1594439314,
+      deletedAt: 0,
     },
   ]));
