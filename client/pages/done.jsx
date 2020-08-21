@@ -20,7 +20,7 @@ const Done = () => {
         <div className="container">
           <H1Test>Confirm</H1Test>
           <div className="formElm">
-            <Title>Your request has been successfully done.</Title>
+            <Title>Your message has been successfully sent.</Title>
             <Body>Please go back to home page.</Body>
             <Button onClick={() => router.push({ pathname: '/' })}>Home</Button>
           </div>
