@@ -1,12 +1,15 @@
 import styled, { keyframes } from 'styled-components';
 
+const protocol = 'http';
+const host = '127.0.0.1';
+const port = 3002;
+
 const server = {
-  protocol: 'http',
-  host: '127.0.0.1',
-  port: 3002,
+  protocol,
+  host,
+  port,
 };
 
-const { protocol, host, port } = server;
 const BASE_URL = `${protocol}://${host}:${port}`;
 
 const SITE_TITLE = 'Demo Portfolio';
@@ -27,6 +30,7 @@ const FadeIn = styled.div`
 const primaryColor = '#23232e';
 
 const constants = {
+  server,
   BASE_URL,
   SITE_TITLE,
   FadeIn,

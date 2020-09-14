@@ -6,7 +6,7 @@ const TITLE = `About | ${constants.SITE_TITLE}`;
 const { FadeIn } = constants;
 
 const About = () => {
-  if (process.browser) {
+  if (window) {
     document.title = TITLE;
   }
   return (
