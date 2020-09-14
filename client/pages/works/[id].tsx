@@ -11,6 +11,9 @@ const SERVER_URL = `${constants.BASE_URL}/${PATH}`;
 const TITLE = `Work | ${constants.SITE_TITLE}`;
 
 const Page = ({ work }) => {
+  if (process.browser) {
+    document.title = TITLE;
+  }
   return (
     <FadeIn>
       <Navbar />
