@@ -1,4 +1,4 @@
-const Koa = require('koa');
+import Koa, { Context, Next } from 'koa';
 const bodyParser = require('koa-bodyparser');
 const compression = require('compression');
 const koaConnect = require('koa-connect');
@@ -20,7 +20,7 @@ const app = new Koa();
 
 app.use(koaBunyanLogger());
 
-app.use((ctx, next) => {
+app.use((ctx: Context, next: Next): Promise<any> => {
   ctx.log.info('Got a request from %s for %s', ctx.request.ip, ctx.path);
   return next();
 });
